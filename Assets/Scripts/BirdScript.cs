@@ -18,4 +18,15 @@ public class BirdScript : MonoBehaviour {
         }
 	}
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameController.instance.score++;
+        Debug.Log(GameController.instance.score.ToString("N0"));
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameController.instance.gameOver = true;
+    }
+
 }
